@@ -8,7 +8,6 @@ const isEven = (num) => {
 
   return false;
 };
-
 const userName = readlineSync.question('May I have your name? ');
 console.log('Welcome to the Brain Games!');
 console.log(`Hello ${userName}`);
@@ -21,19 +20,19 @@ for (let questionNumber = 0; questionNumber < 3; questionNumber += 1) {
     console.log('Correct!');
   } else if (getAnswer === 'yes' && !isEven(num)) {
     console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was 'no'`);
-    console.log(`Let's try again, ${userName}`);
+    console.log(`Let's try again, ${userName}!`);
     break;
   } else if (getAnswer === 'no' && isEven(num)) {
     console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was 'yes'`);
-    console.log(`Let's try again, ${userName}`);
+    console.log(`Let's try again, ${userName}!`);
     break;
   } else if (isEven(num) && (getAnswer !== 'yes' || getAnswer !== 'no')) {
     console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was 'yes'`);
-    console.log(`Let's try again ${userName}`);
+    console.log(`Let's try again, ${userName}!`);
     break;
   } else if (!isEven(num) && (getAnswer !== 'yes' || getAnswer !== 'no')) {
     console.log(`'${getAnswer}' is wrong answer ;(. Correct answer was 'no'`);
-    console.log(`Let's try again ${userName}`);
+    console.log(`Let's try again, ${userName}!`);
     break;
   }
   if (questionNumber === 2) {
