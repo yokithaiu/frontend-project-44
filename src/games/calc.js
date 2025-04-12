@@ -1,4 +1,5 @@
 import { generalLogic } from '../index.js';
+import { arrOfReadyData } from './even.js';
 
 export function getRandomNum() {
   const randomNum = Math.floor(Math.random() * (100 - 0 + 1) + 1);
@@ -7,7 +8,7 @@ export function getRandomNum() {
 export function rulesOfCalcGame() {
   return 'What is the result of the expression?';
 }
-export function getReadyDataOfCalcGame() {
+export function dataOfCalcGame() {
   const readyData = [];
   const firstNumOfExpression = getRandomNum();
   const secondNumOfExpression = getRandomNum();
@@ -22,15 +23,8 @@ export function getReadyDataOfCalcGame() {
   }
   return readyData;
 }
-export function arrOfReadyData() {
-  const arrOfData = [];
-  for (let i = 0; i < 3; i += 1) {
-    arrOfData.push(getReadyDataOfCalcGame());
-  }
-  return arrOfData;
-}
 
 export function brainCalc() {
   console.log(rulesOfCalcGame());
-  return generalLogic(arrOfReadyData());
+  return generalLogic(arrOfReadyData(dataOfCalcGame(), dataOfCalcGame(), dataOfCalcGame()));
 }
