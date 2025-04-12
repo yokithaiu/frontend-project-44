@@ -8,7 +8,7 @@ export const getName = () => {
 export function generalLogic(dataOfGame, rulesOfGame) {
   let countOfRound = 0;
   const rules = rulesOfGame;
-  console.log('Welcome to the Brain Games!')
+  console.log('Welcome to the Brain Games!');
   const userName = getName();
   console.log(`Hello, ${userName}`);
   console.log(rules);

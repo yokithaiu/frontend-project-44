@@ -24,6 +24,6 @@ export function dataOfCalcGame() {
   return readyData;
 }
 
-export function brainCalc() {
+export default function brainCalc() {
   return generalLogic(arrOfReadyData(dataOfCalcGame(), dataOfCalcGame(), dataOfCalcGame()), rulesOfCalcGame());
 }

@@ -19,6 +19,6 @@ export function arrOfReadyData(firstData = dataOfEvenGame(), secondData = dataOf
   return [firstData, secondData, thirdData];
 }
 
-export function brainEven() {
+export default function brainEven() {
   return generalLogic(arrOfReadyData(), rulesOfEvenGame());
 }

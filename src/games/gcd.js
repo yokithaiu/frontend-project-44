@@ -25,6 +25,6 @@ export function dataOfGcdGame() {
   }
   return [`${firstNum} ${secondNum}`, div.toString()];
 }
-export function gcdGame() {
+export default function gcdGame() {
   return (generalLogic(arrOfReadyData(dataOfGcdGame(), dataOfGcdGame(), dataOfGcdGame()), rulesOfGcdGame()));
 }
