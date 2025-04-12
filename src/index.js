@@ -10,7 +10,7 @@ export function generalLogic(dataOfGame, rulesOfGame) {
   const rules = rulesOfGame;
   console.log('Welcome to the Brain Games!');
   const userName = getName();
-  console.log(`Hello, ${userName}`);
+  console.log(`Hello, ${userName}!`);
   console.log(rules);
   while (countOfRound < 3) {
     const readyData = dataOfGame[countOfRound];
@@ -30,5 +30,5 @@ export function generalLogic(dataOfGame, rulesOfGame) {
     return `Congratulations, ${userName}!`;
   }
 
-  return `Let's try again ${userName}!`;
+  return `Let's try again, ${userName}!`;
 }
