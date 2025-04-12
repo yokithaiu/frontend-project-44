@@ -5,10 +5,12 @@ export function getRandomNum(min, max) {
   const randomNum = min + Math.floor(Math.random() * (max - min) + 1);
   return randomNum;
 }
+
 export function rulesOfCalcGame() {
   return 'What is the result of the expression?';
 }
-export function dataOfCalcGame() {
+
+export function calcGame() {
   const readyData = [];
   const firstNumOfExpression = getRandomNum(0, 100);
   const secondNumOfExpression = getRandomNum(0, 100);
@@ -25,5 +27,5 @@ export function dataOfCalcGame() {
 }
 
 export default function brainCalc() {
-  return generalLogic(arrOfReadyData(dataOfCalcGame(), dataOfCalcGame(), dataOfCalcGame()), rulesOfCalcGame());
+  return generalLogic(arrOfReadyData(calcGame(), calcGame(), calcGame()), rulesOfCalcGame());
 }

@@ -2,10 +2,11 @@ import { generalLogic } from '../index.js';
 import { getRandomNum } from './calc.js';
 import { arrOfReadyData } from './even.js';
 
-export function rulesOfProgressionGame() {
+export function progressionRules() {
   return 'What number is missing in the progression?';
 }
-export function readyDataOfProgressionGame() {
+
+export function numOrder() {
   const intervalOfProgression = getRandomNum(2, 10);
   let numOfProgression = intervalOfProgression;
   const lengthOfProgression = getRandomNum(5, 10);
@@ -21,5 +22,5 @@ export function readyDataOfProgressionGame() {
 }
 
 export default function brainProgression() {
-  return generalLogic(arrOfReadyData(readyDataOfProgressionGame(), readyDataOfProgressionGame(), readyDataOfProgressionGame()), rulesOfProgressionGame());
+  return generalLogic(arrOfReadyData(numOrder(), numOrder(), numOrder()), progressionRules());
 }

@@ -10,7 +10,7 @@ export function generalLogic(dataOfGame, rulesOfGame) {
   const rules = rulesOfGame;
   console.log('Welcome to the Brain Games!');
   const userName = getName();
-  console.log(`Hello, ${userName}!`);
+  console.log(`Hello, '${userName}' + '!`);
   console.log(rules);
   while (countOfRound < 3) {
     const readyData = dataOfGame[countOfRound];
@@ -21,11 +21,12 @@ export function generalLogic(dataOfGame, rulesOfGame) {
     if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       break;
     }
     countOfRound += 1;
   }
+
   if (countOfRound === 3) {
     return `Congratulations, ${userName}!`;
   }

@@ -13,7 +13,8 @@ export function getMinNum(a, b) {
 
   return b;
 }
-export function dataOfGcdGame() {
+
+export function gcdGame() {
   const firstNum = getRandomNum(0, 10);
   const secondNum = getRandomNum(0, 10);
   const minNum = getMinNum(firstNum, secondNum);
@@ -25,6 +26,7 @@ export function dataOfGcdGame() {
   }
   return [`${firstNum} ${secondNum}`, div.toString()];
 }
-export default function gcdGame() {
-  return (generalLogic(arrOfReadyData(dataOfGcdGame(), dataOfGcdGame(), dataOfGcdGame()), rulesOfGcdGame()));
+
+export default function brainGcd() {
+  return (generalLogic(arrOfReadyData(gcdGame(), gcdGame(), gcdGame()), rulesOfGcdGame()));
 }

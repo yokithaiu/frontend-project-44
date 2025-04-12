@@ -21,7 +21,7 @@ export function isPrime(num) {
   return false;
 }
 
-export function readyDataOfPrimeGame() {
+export function primeGame() {
   const randomNum = getRandomNum(0, 100);
   if (isPrime(randomNum)) {
     return [randomNum, 'yes'];
@@ -31,5 +31,5 @@ export function readyDataOfPrimeGame() {
 }
 
 export default function braimPrime() {
-  return generalLogic(arrOfReadyData(readyDataOfPrimeGame(), readyDataOfPrimeGame(), readyDataOfPrimeGame()), rulesOfPrimeGame());
+  return generalLogic(arrOfReadyData(primeGame(), primeGame(), primeGame()), rulesOfPrimeGame());
 }
