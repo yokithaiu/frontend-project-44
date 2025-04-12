@@ -27,7 +27,7 @@ export function generalLogic(dataOfGame, rulesOfGame) {
     countOfRound += 1;
   }
   if (countOfRound === 3) {
-    return `Congratulations ${userName}!`;
+    return `Congratulations, ${userName}!`;
   }
 
   return `Let's try again ${userName}!`;
