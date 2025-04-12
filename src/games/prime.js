@@ -3,7 +3,7 @@ import { getRandomNum } from './calc.js';
 import { arrOfReadyData } from './even.js';
 
 export function rulesOfPrimeGame() {
-  return 'Answer "yes" if the number is prime. Otherwise answer "no".';
+  return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
 export function isPrime(num) {
