@@ -1,8 +1,8 @@
 import { generalLogic } from '../index.js';
 import { arrOfReadyData } from './even.js';
 
-export function getRandomNum() {
-  const randomNum = Math.floor(Math.random() * (100 - 0 + 1) + 1);
+export function getRandomNum(min, max) {
+  const randomNum = Math.floor(Math.random() * (max - min + 1));
   return randomNum;
 }
 export function rulesOfCalcGame() {
@@ -10,8 +10,8 @@ export function rulesOfCalcGame() {
 }
 export function dataOfCalcGame() {
   const readyData = [];
-  const firstNumOfExpression = getRandomNum();
-  const secondNumOfExpression = getRandomNum();
+  const firstNumOfExpression = getRandomNum(0, 100);
+  const secondNumOfExpression = getRandomNum(0, 100);
   const operators = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * operators.length);
   if (randomIndex === '*') {

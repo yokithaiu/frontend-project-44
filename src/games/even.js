@@ -5,7 +5,7 @@ export function rulesOfEvenGame() {
   return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 export function dataOfEvenGame() {
-  const randomNum = getRandomNum();
+  const randomNum = getRandomNum(0, 100);
   const readyData = [];
   if (randomNum % 2 === 0) {
     readyData.push(randomNum, 'yes');
