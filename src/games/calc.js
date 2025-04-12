@@ -2,7 +2,7 @@ import { generalLogic } from '../index.js';
 import { arrOfReadyData } from './even.js';
 
 export function getRandomNum(min, max) {
-  const randomNum = Math.floor(Math.random() * (max - min + 1));
+  const randomNum = min + Math.floor(Math.random() * (max - min) + 1);
   return randomNum;
 }
 export function rulesOfCalcGame() {
@@ -25,6 +25,5 @@ export function dataOfCalcGame() {
 }
 
 export function brainCalc() {
-  console.log(rulesOfCalcGame());
-  return generalLogic(arrOfReadyData(dataOfCalcGame(), dataOfCalcGame(), dataOfCalcGame()));
+  return generalLogic(arrOfReadyData(dataOfCalcGame(), dataOfCalcGame(), dataOfCalcGame()), rulesOfCalcGame());
 }

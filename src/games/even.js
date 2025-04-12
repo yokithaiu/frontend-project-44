@@ -20,6 +20,5 @@ export function arrOfReadyData(firstData = dataOfEvenGame(), secondData = dataOf
 }
 
 export function brainEven() {
-  console.log(rulesOfEvenGame());
-  return generalLogic(getArrOfReadyData());
+  return generalLogic(arrOfReadyData(), rulesOfEvenGame());
 }

@@ -5,13 +5,15 @@ export const getName = () => {
   return userName;
 };
 
-export function generalLogic(data) {
+export function generalLogic(dataOfGame, rulesOfGame) {
   let countOfRound = 0;
-  console.log('Welcome to the Brain Games!');
+  const rules = rulesOfGame;
+  console.log('Welcome to the Brain Games!')
   const userName = getName();
   console.log(`Hello, ${userName}`);
+  console.log(rules);
   while (countOfRound < 3) {
-    const readyData = data[countOfRound];
+    const readyData = dataOfGame[countOfRound];
     const question = readyData[0];
     const correctAnswer = readyData[1];
     console.log(`Question: ${question}`);
