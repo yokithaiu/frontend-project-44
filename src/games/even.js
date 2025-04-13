@@ -1,11 +1,7 @@
 import { generalLogic } from '../index.js';
-import { getRandomNum } from './calc.js';
+import { arrOfReadyData, getRandomNum } from '../utilits.js';
 
-export function rulesOfEvenGame() {
-  return 'Answer "yes" if the number is even, otherwise answer "no".';
-}
-
-export function even() {
+export function evenGame() {
   const randomNum = getRandomNum(0, 100);
   const readyData = [];
   if (randomNum % 2 === 0) {
@@ -16,10 +12,9 @@ export function even() {
   return readyData.flat();
 }
 
-export function arrOfReadyData(firstData = even(), secondData = even(), thirdData = even()) {
-  return [firstData, secondData, thirdData];
-}
+const rulesOfEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const readyDataOfEvenGame = arrOfReadyData(evenGame(), evenGame(), evenGame());
 
 export default function brainEven() {
-  return generalLogic(arrOfReadyData(), rulesOfEvenGame());
+  return generalLogic(readyDataOfEvenGame, rulesOfEvenGame);
 }

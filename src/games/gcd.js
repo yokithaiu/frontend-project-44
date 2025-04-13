@@ -1,18 +1,5 @@
 import { generalLogic } from '../index.js';
-import { arrOfReadyData } from './even.js';
-import { getRandomNum } from './calc.js';
-
-export function rulesOfGcdGame() {
-  return 'Find the greatest common divisor of given numbers.';
-}
-
-export function getMinNum(a, b) {
-  if (a <= b) {
-    return a;
-  }
-
-  return b;
-}
+import { arrOfReadyData, getRandomNum, getMinNum } from '../utilits.js';
 
 export function gcdGame() {
   const firstNum = getRandomNum(0, 10);
@@ -27,6 +14,9 @@ export function gcdGame() {
   return [`${firstNum} ${secondNum}`, div.toString()];
 }
 
+const rulesOfGcdGame = 'Find the greatest common divisor of given numbers.';
+const readyDataOfGcdGame = arrOfReadyData(gcdGame(), gcdGame(), gcdGame());
+
 export default function brainGcd() {
-  return (generalLogic(arrOfReadyData(gcdGame(), gcdGame(), gcdGame()), rulesOfGcdGame()));
+  return (generalLogic(readyDataOfGcdGame, rulesOfGcdGame));
 }

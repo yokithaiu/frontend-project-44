@@ -1,26 +1,24 @@
 import { generalLogic } from '../index.js';
-import { getRandomNum } from './calc.js';
-import { arrOfReadyData } from './even.js';
+import { getRandomNum, arrOfReadyData } from '../utilits.js';
 
-export function progressionRules() {
-  return 'What number is missing in the progression?';
-}
-
-export function numOrder() {
-  const intervalOfProgression = getRandomNum(2, 10);
-  let numOfProgression = intervalOfProgression;
-  const lengthOfProgression = getRandomNum(5, 10);
-  const indexOfHiddenElement = getRandomNum(0, (lengthOfProgression - 1));
+export function game() {
+  const progressionInterval = getRandomNum(2, 10);
+  let progressionNum = progressionInterval;
+  const progressionLength = getRandomNum(5, 10);
+  const indexOfHiddenElement = getRandomNum(0, (progressionLength - 1));
   const arrOfProgression = [];
-  for (let i = 0; i < lengthOfProgression; i += 1) {
-    arrOfProgression.push(numOfProgression);
-    numOfProgression += intervalOfProgression;
+  for (let i = 0; i < progressionLength; i += 1) {
+    arrOfProgression.push(progressionNum);
+    progressionNum += progressionInterval;
   }
   const hiddenElement = arrOfProgression[indexOfHiddenElement];
   arrOfProgression[indexOfHiddenElement] = '..';
   return [`${arrOfProgression.join(' ')}`, hiddenElement.toString()].flat();
 }
 
+const rulesOfProgressionGame = 'What number is missing in the progression?';
+const readyDataOfProgressionGame = arrOfReadyData(game(), game(), game());
+
 export default function brainProgression() {
-  return generalLogic(arrOfReadyData(numOrder(), numOrder(), numOrder()), progressionRules());
+  return generalLogic(readyDataOfProgressionGame, rulesOfProgressionGame);
 }
