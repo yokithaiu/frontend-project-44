@@ -3,8 +3,8 @@ export function getRandomNum(min, max) {
   return randomNum;
 }
 
-export function arrOfReadyData(firstData, secondData, thirdData) {
-  return [firstData, secondData, thirdData];
+export function arrOfReadyData(...data) {
+  return data;
 }
 
 export function isPrime(num) {
